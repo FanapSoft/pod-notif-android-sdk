@@ -1,0 +1,20 @@
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
+        maven { url 'https://jitpack.io' }
+        maven { url "https://s3.amazonaws.com/repo.commonsware.com" }
+        maven {
+            name = "notif_sdk"
+            url = uri("https://maven.pkg.github.com/FanapSoft/pod-notif-android-sdk")
+            credentials {
+                username = System.getenv('GITHUB_USER')
+                password = System.getenv('GITHUB_PERSONAL_ACCESS_TOKEN')
+            }
+        }
+    }
+}
+rootProject.name = "NotificationPushSample"
+include ':app'

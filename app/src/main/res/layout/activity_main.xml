@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8F8"
+    android:layoutDirection="rtl"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:paddingLeft="0dp"
+        android:paddingTop="0dp"
+        android:paddingRight="0dp"
+        android:paddingBottom="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentInsetEnd="0dp"
+            app:contentInsetLeft="0dp"
+            app:contentInsetRight="0dp"
+            app:contentInsetStart="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/lblTitle"
+                    style="?bigTextSize"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/iransans_bold"
+                    android:text="@string/app_name"
+                    android:textSize="13sp"
+                    android:textColor="@color/white" />
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:visibility="gone"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="3dp">
+
+        <ir.podspace.notificationpushsample.view.EditTextSelectable.ClickToSelectEditText
+            android:id="@+id/ddlToken"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@null"
+            android:fontFamily="@font/iransans_bold"
+            android:gravity="center_vertical"
+            android:hint="توکن خود را انتخاب نمائید"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:textColor="#717171"
+            android:textColorHint="#989898"
+            android:textSize="11sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="3dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtAppId"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@null"
+            android:fontFamily="@font/iransans_bold"
+            android:gravity="center_vertical"
+            android:hint="شناسه اپلیکیشن"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:textColor="#717171"
+            android:text="51567ad0-a944-4e4b-b686-533108af7fff"
+            android:textColorHint="#989898"
+            android:textSize="14sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="3dp">
+
+        <ir.podspace.notificationpushsample.view.loading_button.KS_LoadingButton
+            android:id="@+id/btnSubmit"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#737aed"
+            app:ks_fontFamily="@font/iransans_bold"
+            app:lb_image_padding="11sp"
+            app:lb_progress_color="#ffffff"
+            app:lb_progress_padding="11sp"
+            app:lb_text="فعالسازی"
+            app:lb_text_color="#ffffff"
+            app:lb_text_size="13sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="3dp">
+
+        <ir.podspace.notificationpushsample.view.loading_button.KS_LoadingButton
+            android:id="@+id/btnExit"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#737aed"
+            app:ks_fontFamily="@font/iransans_bold"
+            app:lb_image_padding="11sp"
+            app:lb_progress_color="#ffffff"
+            app:lb_progress_padding="11sp"
+            app:lb_text="خروج از حساب کاربری"
+            app:lb_text_color="#ffffff"
+            app:lb_text_size="13sp" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/lblResponse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/iransans_bold" />
+
+</LinearLayout>

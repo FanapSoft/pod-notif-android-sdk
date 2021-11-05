@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OtpActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="30dp"
+                app:cardCornerRadius="2dp"
+                app:cardElevation="2dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtOtp"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@null"
+                    android:fontFamily="@font/iransans_bold"
+                    android:gravity="center_vertical"
+                    android:hint="کد تایید وارد نمائید"
+                    android:inputType="number"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:singleLine="true"
+                    android:textColor="#717171"
+                    android:textColorHint="#989898"
+                    android:textSize="14sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="10dp"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="3dp">
+
+                <ir.podspace.notificationpushsample.view.loading_button.KS_LoadingButton
+                    android:id="@+id/btnSubmit"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="#737aed"
+                    app:ks_fontFamily="@font/iransans_bold"
+                    app:lb_image_padding="11sp"
+                    app:lb_progress_color="#ffffff"
+                    app:lb_progress_padding="11sp"
+                    app:lb_text="تایید"
+                    app:lb_text_color="#ffffff"
+                    app:lb_text_size="13sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <ir.podspace.notificationpushsample.view.loading_button.KS_LoadingButton
+                android:id="@+id/btnResend"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@null"
+                app:ks_fontFamily="@font/iransans_bold"
+                app:lb_image_padding="11sp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="10dp"
+                app:lb_progress_color="#737aed"
+                app:lb_progress_padding="11sp"
+                app:lb_text="ارسال مجدد"
+                app:lb_text_color="#717171"
+                app:lb_text_size="13sp" />
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

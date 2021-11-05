@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="bigTextSize" type="reference"/>
+    <attr name="normalTextSize" type="reference"/>
+    <attr name="hintTextSize" type="reference"/>
+
+    <attr name="ks_fontFamily" format="enum">
+        <enum name="iransans" value="0" />
+        <enum name="iransans_bold" value="1" />
+        <enum name="vazir_black" value="2" />
+        <enum name="vazir_bold" value="3" />
+        <enum name="vazir" value="4" />
+        <enum name="vazir_light" value="5" />
+        <enum name="vazir_medium" value="6" />
+        <enum name="vazir_thin" value="7" />
+        <enum name="samim" value="8" />
+        <enum name="samim_bold" value="9" />
+        <enum name="shabnam" value="10" />
+        <enum name="shabnam_bold" value="11" />
+        <enum name="shabnam_light" value="12" />
+        <enum name="yekan" value="13" />
+        <enum name="adobe_arabic_shin" value="14" />
+    </attr>
+
+    <declare-styleable name="TextBlock">
+        <attr name="ks_fontFamily" />
+    </declare-styleable>
+
+    <declare-styleable name="EditableTextBlock">
+        <attr name="ks_fontFamily" />
+    </declare-styleable>
+
+    <declare-styleable name="ButtonView">
+        <attr name="ks_fontFamily" />
+    </declare-styleable>
+
+    <declare-styleable name="ImageView">
+        <attr name="ks_ratio" format="string" />
+    </declare-styleable>
+
+
+    <declare-styleable name="KS_BottomNavigationView">
+        <attr name="ks_fontFamily" />
+    </declare-styleable>
+
+
+    <declare-styleable name="RadioButtonView">
+        <attr name="ks_fontFamily" />
+    </declare-styleable>
+
+    <declare-styleable name="KS_Checkbox">
+        <attr name="ks_fontFamily" />
+    </declare-styleable>
+
+    <declare-styleable name="DragLayout">
+        <attr name="bottomDragVisibleHeight" format="dimension" />
+        <attr name="bototmExtraIndicatorHeight" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="PresetValueButton">
+        <attr name="presetButtonUnitText" format="string" />
+        <attr name="presetButtonValueTextColor" format="color" />
+        <attr name="presetButtonPressedTextColor" format="color" />
+        <attr name="presetButtonUnitTextColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="PresetRadioGroup">
+        <attr name="presetRadioCheckedId" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="CurveBottomBar">
+        <attr name="ks_bottomBarColor" format="color" />
+        <attr name="ks_curveRadius" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="KS_LoadingButton">
+        <attr name="lb_text" format="string" />
+        <attr name="lb_text_color" format="color" />
+        <attr name="lb_progress_color" format="color" />
+        <attr name="lb_text_size" format="dimension" />
+        <attr name="lb_progress_padding" format="dimension" />
+        <attr name="lb_image" format="reference" />
+        <attr name="lb_image_padding" format="dimension" />
+        <attr name="ks_fontFamily" />
+    </declare-styleable>
+
+</resources>
