@@ -28,7 +28,7 @@ allprojects {
 #### App build.gradle ![Build Status](https://img.shields.io/bintray/v/farhad7d7/maven/chat?style=plastic)
 
 ```
-implementation("ir.fanap.sdk_notif:sdk_notif:0.0.1")
+implementation("ir.fanap.sdk_notif:sdk_notif:0.0.6.1")
 ```
 
 #
