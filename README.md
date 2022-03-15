@@ -34,36 +34,104 @@ implementation("ir.fanap.sdk_notif:sdk_notif:0.0.6.4")
 #
 
 
-#### Initial
+#### Initial without LOGIN
 
 ```
-        PushSdk pushSdk = new PushSdk.Builder()
-                .setContext(MainActivity.this)
-                .setApiToken(token)
-                .setAppId(appId)
-                .setHandleNotification(false)   //if you want to manage notification, set true
-                .setResponseListener(new ResponseListener() {
-                    @Override
-                    public void onSubscribe(JSONObject jsonObject) {
-                        btnRegister.stopLoading();
-                        lblResponse.setText(jsonObject.optString("fcmToken"));
-                        lblResponse.setTextColor(Color.GREEN);
-                    }
+            pushSdk = new PushSdk.Builder()
+                    .setContext(MainActivity.this)
+                    .setAppId(appId)
+                    .setHandleNotification(false)
+                    .setResponseListener(new ResponseListener() {
+                        @Override
+                        public void onSubscribe(JSONObject jsonObject) {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    btnSubmitWithoutLogin.stopLoading();
+                                    lblResponse.setText(jsonObject.optString("fcmToken"));
+                                    lblResponse.setTextColor(Color.GREEN);
+                                }
+                            });
+                        }
 
-                    @Override
-                    public void onUnsubscribe() {
-                        presenter.logout();
-                    }
+                        @Override
+                        public void onUnsubscribe() {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    btnExit.stopLoading();
+                                    lblResponse.setText("Logout!!!");
+                                    lblResponse.setTextColor(Color.GREEN);
+                                }
+                            });
+                        }
 
-                    @Override
-                    public void onError(Exception e) {
-                        btnRegister.stopLoading();
-                        lblResponse.setText(e.getMessage());
-                        lblResponse.setTextColor(Color.RED);
-                    }
-                })
-                .build();
+                        @Override
+                        public void onError(Exception e) {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    btnExit.stopLoading();
+                                    btnSubmitWithoutLogin.stopLoading();
+                                    lblResponse.setText(e.getMessage());
+                                    lblResponse.setTextColor(Color.RED);
+                                }
+                            });
+                        }
+                    })
+                    .build();
+```
 
+#
+
+
+#### Initial with SSOID
+
+```
+            pushSdk = new PushSdk.Builder()
+                    .setContext(MainActivity.this)
+                    .setAppId(appId)
+                    .setSsoId(ssoId)
+                    .setHandleNotification(false)
+                    .setResponseListener(new ResponseListener() {
+                        @Override
+                        public void onSubscribe(JSONObject jsonObject) {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    btnSubmitWithLogin.stopLoading();
+                                    lblResponse.setText(jsonObject.optString("fcmToken"));
+                                    lblResponse.setTextColor(Color.GREEN);
+                                }
+                            });
+                        }
+
+                        @Override
+                        public void onUnsubscribe() {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    btnExit.stopLoading();
+                                    lblResponse.setText("Logout!!!");
+                                    lblResponse.setTextColor(Color.GREEN);
+                                }
+                            });
+                        }
+
+                        @Override
+                        public void onError(Exception e) {
+                            runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    btnExit.stopLoading();
+                                    btnSubmitWithLogin.stopLoading();
+                                    lblResponse.setText(e.getMessage());
+                                    lblResponse.setTextColor(Color.RED);
+                                }
+                            });
+                        }
+                    })
+                    .build();
 ```
 
 #
